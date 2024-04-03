@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="es">
+
+<head>
+  <title>7 y 1/2</title>
+  <meta charset="utf-8">
+  <meta name="author" content="Juan Manuel Valcárcel Sánchez">
+  <meta name="description" content="Juego 7 y 1/2">
+  <meta name="keywords" content="Juego 7 y 1/2">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Fuente título -->
+  <link href="https://fonts.googleapis.com/css?family=Rye" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/index.css">
+  <script src="js/inicializar.js"></script>
+</head>
+<body>
+  <noscript>
+    <p>La página que estás viendo requiere para su funcionamiento el uso de
+      JavaScript. Si lo has deshabilitado intencionadamente, por favor vuelve a
+      activarlo.
+    </p>
+  </noscript>
+  <div id="marco_exterior">
+    <header id="cabecera">
+      <h1>
+        <span class="rojo">&hearts;</span><span class="negro">&spades;</span>
+        Siete y medio
+        <span class="negro">&clubs;</span><span class="rojo">&diams;</span>
+      </h1>
+    </header>
+    <div id="tapete">
+      <section id="banca">
+        <h3>Banca</h3>
+        <div id="cartas_banca">
+        </div>
+      </section>
+      <section id="jugador">
+        <h3>Jugador</h3>
+        <div id="cartas_jugador">
+        </div>
+      </section>
+    </div>
+    <div id="mensaje" hidden>
+      mensaje
+    </div>
+    <div id="puntuacion">
+      Puntos banca: <span id="puntos_banca">99</span>&nbsp;&nbsp;&nbsp;
+      Puntos jugador: <span id="puntos_jugador">99</span>
+    </div>
+    <div id="botones">
+      <button id="reiniciar" onclick="location.reload()" hidden>Reiniciar</button>
+      <button id="pasar" onclick="Pasar();">Pasar</button>
+      <button id="pedir_carta" onclick="PedirCarta();">Pedir Carta</button>
+    </div>
+    <footer id="pie">
+      &copy; Juan Manuel Valcárcel Sánchez
+    </footer>
+  </div>
+</body>
+</html>

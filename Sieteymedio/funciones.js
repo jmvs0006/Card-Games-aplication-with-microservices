@@ -45,7 +45,6 @@ const FUNCIONES = {
       baraja = JsonToArray(aux);
 
       mano_jugador.push(baraja.shift());
-      mano_jugador.push(baraja.shift());
       mano_banca.push(baraja.shift());
 
       puntuacion_jugador = puntuar(mano_jugador);
