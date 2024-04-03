@@ -63,7 +63,56 @@ const barajaFR=[
   { id: 'D13', nombre: 'Rey de Diamantes' }
   ];
 
-
+  const barajaES=[
+    { id: 'B01', nombre: 'As de Bastos' },
+    { id: 'B02', nombre: '2 de Bastos' },
+    { id: 'B03', nombre: '3 de Bastos' },
+    { id: 'B04', nombre: '4 de Bastos' },
+    { id: 'B05', nombre: '5 de Bastos' },
+    { id: 'B06', nombre: '6 de Bastos' },
+    { id: 'B07', nombre: '7 de Bastos' },
+    { id: 'B08', nombre: '8 de Bastos' },
+    { id: 'B09', nombre: '9 de Bastos' },
+    { id: 'B10', nombre: 'Jota de Bastos' },
+    { id: 'B11', nombre: 'Reina de Bastos' },
+    { id: 'B12', nombre: 'Rey de Bastos' },
+    { id: 'C01', nombre: 'As de Copas' },
+    { id: 'C02', nombre: '2 de Copas' },
+    { id: 'C03', nombre: '3 de Copas' },
+    { id: 'C04', nombre: '4 de Copas' },
+    { id: 'C05', nombre: '5 de Copas' },
+    { id: 'C06', nombre: '6 de Copas' },
+    { id: 'C07', nombre: '7 de Copas' },
+    { id: 'C08', nombre: '8 de Copas' },
+    { id: 'C09', nombre: '9 de Copas' },
+    { id: 'C10', nombre: 'Jota de Copas' },
+    { id: 'C11', nombre: 'Reina de Copas' },
+    { id: 'C12', nombre: 'Rey de Copas' },
+    { id: 'E01', nombre: 'As de Espadas' },
+    { id: 'E02', nombre: '2 de Espadas' },
+    { id: 'E03', nombre: '3 de Espadas' },
+    { id: 'E04', nombre: '4 de Espadas' },
+    { id: 'E05', nombre: '5 de Espadas' },
+    { id: 'E06', nombre: '6 de Espadas' },
+    { id: 'E07', nombre: '7 de Espadas' },
+    { id: 'E08', nombre: '8 de Espadas' },
+    { id: 'E09', nombre: '9 de Espadas' },
+    { id: 'E10', nombre: 'Jota de Espadas' },
+    { id: 'E11', nombre: 'Reina de Espadas' },
+    { id: 'E12', nombre: 'Rey de Espadas' },
+    { id: 'O01', nombre: 'As de Oros' },
+    { id: 'O02', nombre: '2 de Oros' },
+    { id: 'O03', nombre: '3 de Oros' },
+    { id: 'O04', nombre: '4 de Oros' },
+    { id: 'O05', nombre: '5 de Oros' },
+    { id: 'O06', nombre: '6 de Oros' },
+    { id: 'O07', nombre: '7 de Oros' },
+    { id: 'O08', nombre: '8 de Oros' },
+    { id: 'O09', nombre: '9 de Oros' },
+    { id: 'O10', nombre: 'Jota de Oros' },
+    { id: 'O11', nombre: 'Reina de Oros' },
+    { id: 'O12', nombre: 'Rey de Oros' }
+  ];
 
 const FUNCIONES = {
 
@@ -83,6 +132,30 @@ const FUNCIONES = {
    */
   frAleatorio: async (req, res) => {
       var barajaBarajada = barajaFR;
+      barajaBarajada.sort(function(){return Math.random()-0.5});
+      try{
+        res.send(JSON.stringify(barajaBarajada));
+      }catch (error){
+        res.status(500).json({ error: error.description });
+      }
+  },
+
+  /*
+  * Devuelve un JSON con la baraja francesa ordenada
+  */
+  es: async (req, res) => {
+    try{
+        res.send(JSON.stringify(barajaES));
+    }catch (error){
+        res.status(500).json({ error: error.description });
+    }
+  },
+
+  /**
+   * Devuelve un JSON con la baraja francesa barajada de manera aleatoria
+   */
+  esAleatorio: async (req, res) => {
+      var barajaBarajada = barajaES;
       barajaBarajada.sort(function(){return Math.random()-0.5});
       try{
         res.send(JSON.stringify(barajaBarajada));

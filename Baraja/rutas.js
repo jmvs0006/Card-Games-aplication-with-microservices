@@ -18,4 +18,20 @@ router.get("/aleatorio/fr", async (req, res) => {
     }
 });
 
+router.get("/es", async (req, res) => {
+    try {
+        await funciones.es(req, res)
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+router.get("/aleatorio/es", async (req, res) => {
+    try {
+        await funciones.esAleatorio(req, res)
+    } catch (error) {
+        console.log(error);
+    }
+});
+
 module.exports = router;

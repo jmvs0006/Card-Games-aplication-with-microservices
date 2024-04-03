@@ -109,6 +109,7 @@ const FUNCIONES = {
      * Dado un estado de la partida realiza la acción de que el jugador pase
      */
     pasar: async (req, res) => {
+        console.log("hola");
         let baraja = req.body.baraja;
         let mano_jugador = req.body.mano_jugador;
         let mano_banca = req.body.mano_banca;
@@ -145,7 +146,6 @@ const FUNCIONES = {
             puntuacion_banca,
             ganador
           };
-          console.log(partida);
           res.send(JSON.stringify(partida));
     },
   }

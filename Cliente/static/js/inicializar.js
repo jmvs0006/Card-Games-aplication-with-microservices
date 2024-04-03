@@ -1,5 +1,5 @@
 const RUTA_MS_BLACKJACK = "http://localhost:8002";
-
+//const RUTA_MS_BLACKJACK = "https://vg3jdmms-8002.uks1.devtunnels.ms/";
 //const cartas_banca =document.getElementById('cartas_banca');
 //const cartas_jugador =document.getElementById('cartas_jugador');
 //const puntos_banca =document.getElementById('puntos_banca');

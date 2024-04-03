@@ -11,7 +11,7 @@ app.use(cors());
 app.use("/", rutas);
 
 app.listen(puerto, ()=>{
-    console.log(`Microservicio barajas en puerto ${puerto}`);
+    console.log(`Microservicio Baraja en puerto ${puerto}`);
 })
 
 module.exports = app;

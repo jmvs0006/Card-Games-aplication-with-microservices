@@ -11,5 +11,8 @@
     "blackjack"
   ],
   "author": "Juan Manuel Valcárcel Sánchez",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
 }
