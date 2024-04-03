@@ -1,0 +1,15 @@
+{
+  "name": "cliente_black_jack",
+  "version": "1.0.0",
+  "description": "cliente para la interfaz del juego de blackjack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cliente",
+    "blackjack"
+  ],
+  "author": "Juan Manuel Valcárcel Sánchez",
+  "license": "ISC"
+}

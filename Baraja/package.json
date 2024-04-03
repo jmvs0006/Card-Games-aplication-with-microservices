@@ -1,0 +1,17 @@
+{
+  "name": "baraja",
+  "version": "1.0.0",
+  "description": "microservicio para gestionar los diferentes tipos de barajas para los demás microservicios",
+  "main": "servidor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "baraja"
+  ],
+  "author": "Juan Manuel Valcárcel Sánchez",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
+}
