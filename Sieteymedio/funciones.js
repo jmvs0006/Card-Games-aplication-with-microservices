@@ -1,27 +1,16 @@
-const RUTA_MS_BARAJA = "http://localhost:8001/aleatorio/fr";
-const PUNTUACION_MAX = 21;
-const PUNTUACION_MIN_BANCA = 17;
+const RUTA_MS_BARAJA = "http://localhost:8001/aleatorio/es/corta";
+const PUNTUACION_MAX = 7.5;
 /*
 * Función para puntuar las mano de un jugador
 */
 function puntuar(mano) {
   let puntuacion = 0;
-  let ases = 0;
   for (let i = 0; i < mano.length; i++) {
     let val = eval(mano[i].id.slice(1));
-    if(val===1) ases++;
-    if(val>10){
-      val = 10;
+    if(val>7){
+      val = 0.5;
     }
     puntuacion = puntuacion + val;
-  }
-  while (ases>0) {
-    if (PUNTUACION_MAX-puntuacion>9) {
-      puntuacion= puntuacion + 10;
-      ases--;
-    }else{
-      ases = 0;
-    }
   }
   return puntuacion;
 }

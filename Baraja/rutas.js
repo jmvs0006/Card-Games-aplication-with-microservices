@@ -34,4 +34,20 @@ router.get("/aleatorio/es", async (req, res) => {
     }
 });
 
+router.get("/es/corta", async (req, res) => {
+    try {
+        await funciones.esCorta(req, res)
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+router.get("/aleatorio/es/corta", async (req, res) => {
+    try {
+        await funciones.esCortaAleatorio(req, res)
+    } catch (error) {
+        console.log(error);
+    }
+});
+
 module.exports = router;
