@@ -1,5 +1,5 @@
-const RUTA_MS_SIETEYMEDIO = "http://localhost:8003";
-//const RUTA_MS_SIETEYMEDIO = "https://vg3jdmms-8003.uks1.devtunnels.ms/";
+//const RUTA_MS_SIETEYMEDIO = "http://localhost:8003";
+const RUTA_MS_SIETEYMEDIO = "https://vg3jdmms-8003.uks1.devtunnels.ms";
 //const cartas_banca =document.getElementById('cartas_banca');
 //const cartas_jugador =document.getElementById('cartas_jugador');
 //const puntos_banca =document.getElementById('puntos_banca');

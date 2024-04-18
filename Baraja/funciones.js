@@ -8,7 +8,7 @@
 * los que representan la J, la Q y la K en ese mismo orden.
 */
 
-const barajaFR=[
+  const barajaFR=[
   { id: 'P01', nombre: 'As de Picas' },
   { id: 'P02', nombre: '2 de Picas' },
   { id: 'P03', nombre: '3 de Picas' },
