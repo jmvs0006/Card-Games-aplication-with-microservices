@@ -23,7 +23,6 @@ header {
   background-color: #58290a;
   padding-bottom: 5px;
   border-radius: 0px 0px 10px 10px;
-  position: top;
 }
 
 .rojo { color: red; }
@@ -56,6 +55,43 @@ h3 {
   color: #70b270;
 }
 
+section#banca {
+  height: 190px;
+}
+
+div#informacion {
+  background-color: red;
+  font-weight: bold;
+  padding: 0.5em;
+  font-size: 1.05em;
+  border-radius: 10px;
+}
+
+section#jugador {
+  height: 190px;
+}
+
+div#mensaje {
+  width: 100%;
+  position: absolute;
+  background-color: yellow;
+  color:green;
+  bottom: 120px;
+  font-size: 1.3em;
+  padding: 10px 0px;
+  border-radius: 10px;
+}
+
+
+div#puntuacion {
+  width: 100%;
+  position: absolute;
+  background-color: rgb(34, 34, 34);
+  bottom: 90px;
+  text-align: center;
+  font-size: 1.2em;
+  border-radius: 10px;
+}
 
 div#botones {
   position: absolute;
@@ -71,4 +107,8 @@ button {
   color: #d3e8d3;
   background-color: #3d563d;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+button:disabled {
+  opacity: 0.4;
 }

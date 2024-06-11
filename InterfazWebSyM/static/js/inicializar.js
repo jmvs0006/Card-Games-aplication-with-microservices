@@ -1,5 +1,5 @@
-//const RUTA_MS_BLACKJACK = "http://localhost:8002";
-const RUTA_MS_BLACKJACK = "https://vg3jdmms-8002.uks1.devtunnels.ms";
+//Esta ruta se ha de modificar para coincidir con la ruta en la que se desplegue el microservicio SieteyMedio en ese momento
+const RUTA_MS_SIETEYMEDIO = "http://localhost:8003";
 
 var baraja;
 var mano_jugador;
@@ -7,14 +7,16 @@ var mano_banca;
 var puntuacion_jugador;
 var puntuacion_banca;
 
+//Función para obtener la inicialización de la partida
 async function ini(){
     try{
-        return await fetch(RUTA_MS_BLACKJACK).then(response=>response.json());
+        return await fetch(RUTA_MS_SIETEYMEDIO).then(response=>response.json());
     }catch (error){
         res.status(500).json({ error: error.description });
     }
 }
 
+//Inicailización de la página
 function now(val){
     baraja = val.baraja;
     mano_jugador = val.mano_jugador;
@@ -31,7 +33,7 @@ function now(val){
         cartas_banca.innerHTML += carta.nombre + "<br>";
     });
 }
-
+    //Inicialización de la partida al cargar la página
     document.addEventListener("DOMContentLoaded", (event) => {
         const cartas_banca =document.getElementById('cartas_banca');
         const cartas_jugador =document.getElementById('cartas_jugador');
@@ -42,9 +44,10 @@ function now(val){
         ini().then(val=>now(val));
       });
 
+//Conexión con el microservicio SieteyMedio para pasar el turno
 async function conexion_pasar(partida){
     try{
-        return await fetch(RUTA_MS_BLACKJACK+"/pasar",{
+        return await fetch(RUTA_MS_SIETEYMEDIO+"/pasar",{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -56,6 +59,7 @@ async function conexion_pasar(partida){
     }
 }
 
+//Acciones necesarias para terminar la partida
 function terminarPartida(partida){
     const boton_reiniciar =document.getElementById('reiniciar');
     const boton_pasar =document.getElementById('pasar');
@@ -89,6 +93,7 @@ function terminarPartida(partida){
     boton_robar.setAttribute("hidden","yes");
 }
 
+//Función asociada al botón pasar
 function Pasar(){
     let partida ={
         baraja,mano_jugador,mano_banca
@@ -96,9 +101,10 @@ function Pasar(){
     conexion_pasar(partida).then(val => terminarPartida(val));
 }
 
+//Conexión con el microservicio SieteyMedio para robar una carta
 async function conexion_robar(partida){
     try{
-        return await fetch(RUTA_MS_BLACKJACK+"/robar",{
+        return await fetch(RUTA_MS_SIETEYMEDIO+"/robar",{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -110,6 +116,7 @@ async function conexion_robar(partida){
     }
 }
 
+//Actualiza los valores a loa nuevos obtenidos después de realizar las acciones de la partida
 function actualizar(partida){
     console.log(partida.ganador);
     baraja = partida.baraja;
@@ -132,6 +139,8 @@ function actualizar(partida){
 
     if(partida.ganador === 2) terminarPartida(partida);
 }
+
+//Función asociada al botón pedir carta
 function PedirCarta(){
     let partida ={
         baraja,mano_jugador,mano_banca
